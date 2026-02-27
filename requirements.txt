@@ -1,0 +1,30 @@
+ # ===============依赖包管理============
+
+# dotenv
+python-dotenv>=1.0.0
+
+# streamlit
+streamlit==1.54.0
+
+# LangChain
+langchain_community==0.4.1
+langchain_core==1.2.9 
+langchain_openai==1.1.7
+langchain_chroma==1.1.0
+langchain_ollama==1.0.1
+langchain_text_splitters==1.1.0
+
+# Dashscope
+dashscope==1.25.12
+
+# Chromadb
+chromadb==1.5.0
+
+# Redis
+redis==7.1.0
+
+# pydantic
+pydantic==2.12.5
+
+# pypdf
+pypdf==6.7.3

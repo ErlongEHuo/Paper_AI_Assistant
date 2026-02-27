@@ -1,0 +1,51 @@
+# 指定Docker Compose文件格式版本  
+version: '3.8'
+
+# 为整个Docker Compose项目指定一个名称
+# 这个名称将用于创建网络、卷等资源的前缀
+name: Paper_AI_Assistant_Redis
+
+# 定义服务列表
+services:
+
+
+
+  # 定义名为redis的服务
+  redis:
+    # 指定使用的Docker镜像
+    # redis:7.2-alpine表示使用Redis 7.2版本的Alpine Linux镜像（轻量级）
+    image: redis:7.2-alpine
+    
+    # 指定容器的名称
+    # 这样可以通过名称直接引用容器，而不是使用随机生成的ID
+    container_name: paper_redis_server
+    
+    # 端口映射配置
+    ports:
+      # 将宿主机的6380端口映射到容器的6379端口
+      # 宿主机端口:容器端口
+      # 这样可以通过宿主机的6380端口访问容器内的Redis服务（默认6379端口）
+      - "6380:6379" # 宿主机端口:容器端口
+    
+    # 数据卷挂载配置
+    volumes:
+      # 将宿主机上的../database/redis_data目录挂载到容器内的/data目录
+      # ../database/redis_data是相对于docker-compose.yml文件的路径
+      # /data是Redis容器内存储数据的默认目录
+      # 这样Redis数据会持久化到宿主机的文件系统中，容器删除后数据不会丢失
+      - ../database/redis_data:/data
+    
+    # 容器启动时执行的命令
+    # redis-server --appendonly yes 启动Redis服务器并开启AOF持久化
+    # AOF（Append Only File）持久化会记录所有写操作命令，用于数据恢复
+    command: redis-server --appendonly yes
+    
+    # 容器重启策略
+    # unless-stopped表示除非手动停止容器，否则容器会在退出时自动重启
+    # 这确保了Redis服务在意外停止后能够自动恢复
+    restart: unless-stopped
+
+
+# shell 命令启动容器
+# # 创建并启动Redis容器（后台运行）
+# docker-compose up -d 
