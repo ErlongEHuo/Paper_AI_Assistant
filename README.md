@@ -183,5 +183,5 @@ e:\代码\Paper_AI_Assistant\
 ## 联系方式
 
 - 项目维护者：Erlong E Huo
-- 联系邮箱：erlong.e.huo@cn.pwc.com
+- 联系邮箱：18535061027@163.com
 - 项目仓库：https://github.com/ErlongEHuo/Paper_AI_Assistant
