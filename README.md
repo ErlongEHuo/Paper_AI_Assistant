@@ -56,7 +56,6 @@ AI智能论文助手是一个基于Streamlit构建的智能问答系统，专为
 
 ![1772186571555](image/README/1772186571555.png)
 
-
 ### 技术栈
 
 - **前端框架**: Streamlit
@@ -185,4 +184,4 @@ e:\代码\Paper_AI_Assistant\
 
 - 项目维护者：Erlong E Huo
 - 联系邮箱：erlong.e.huo@cn.pwc.com
-- 项目仓库：[GitHub地址]
+- 项目仓库：https://github.com/ErlongEHuo/Paper_AI_Assistant
